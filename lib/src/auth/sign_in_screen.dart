@@ -34,7 +34,6 @@ class SignScreen extends StatelessWidget {
                 CustomTextField(
                   icon: Icons.email,
                   label: "Email",
-                  isObscure: false,
                 ),
                 // Senha
                 CustomTextField(
