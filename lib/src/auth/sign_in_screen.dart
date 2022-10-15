@@ -7,12 +7,12 @@ class SignScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.purple,
         body: Column(
           children: [
             Expanded(
                 child: Container(
-              color: Colors.green,
+              color: Colors.purple,
             )),
             Expanded(
                 child: Container(
@@ -24,24 +24,54 @@ class SignScreen extends StatelessWidget {
                   color: Colors.white,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(45))),
-              child: Column(children: [
-                // Nome
-                // CustomTextField(
-                //   icon: Icons.name,
-                //   label: 'nome'
-                // ),
-                // Email
-                CustomTextField(
-                  icon: Icons.email,
-                  label: "Email",
-                ),
-                // Senha
-                CustomTextField(
-                  icon: Icons.email,
-                  label: "Password",
-                  isSecret: true,
-                ),
-              ]),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Nome
+                    // CustomTextField(
+                    //   icon: Icons.name,
+                    //   label: 'nome'
+                    // ),
+                    // Email
+                    const CustomTextField(
+                      icon: Icons.email,
+                      label: "Email",
+                    ),
+                    // Senha
+                    const CustomTextField(
+                      icon: Icons.email,
+                      label: "Password",
+                      isSecret: true,
+                    ),
+                    SizedBox(
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18),
+                        )),
+                        onPressed: () {},
+                        child: const Text(
+                          'Entrar',
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Esqueceu a senha?',
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          )),
+                    )
+                  ]),
             )),
           ],
         ));
