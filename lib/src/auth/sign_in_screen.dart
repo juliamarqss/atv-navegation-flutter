@@ -1,4 +1,5 @@
 import 'package:atv_navegation/src/auth/components/custom_text_field.dart';
+import 'package:atv_navegation/src/auth/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignScreen extends StatelessWidget {
@@ -28,10 +29,10 @@ class SignScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     // Nome
-                    // CustomTextField(
-                    //   icon: Icons.name,
-                    //   label: 'nome'
-                    // ),
+                    const CustomTextField(
+                      icon: Icons.account_circle,
+                      label: "Nome",
+                    ),
                     // Email
                     const CustomTextField(
                       icon: Icons.email,
@@ -39,10 +40,11 @@ class SignScreen extends StatelessWidget {
                     ),
                     // Senha
                     const CustomTextField(
-                      icon: Icons.email,
+                      icon: Icons.password,
                       label: "Password",
                       isSecret: true,
                     ),
+                    // Botão de entrar
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
@@ -50,7 +52,12 @@ class SignScreen extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         )),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (c) {
+                            return const HomeScreen();
+                          }));
+                        },
                         child: const Text(
                           'Entrar',
                           style: TextStyle(
@@ -59,18 +66,18 @@ class SignScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Esqueceu a senha?',
-                            style: TextStyle(
-                              color: Colors.red,
-                            ),
-                          )),
-                    )
+                    // Botão de esqueceu a senha
+                    // Align(
+                    //   alignment: Alignment.centerRight,
+                    //   child: TextButton(
+                    //       onPressed: () {},
+                    //       child: const Text(
+                    //         'Esqueceu a senha?',
+                    //         style: TextStyle(
+                    //           color: Colors.red,
+                    //         ),
+                    //       )),
+                    // )
                   ]),
             )),
           ],

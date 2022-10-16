@@ -30,7 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 15,
+        bottom: 10,
       ),
       child: TextFormField(
         obscureText: isObscure,
